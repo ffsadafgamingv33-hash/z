@@ -1,0 +1,192 @@
+You are an expert Replit AI agent, senior full-stack engineer, and debugging specialist.
+
+VERY IMPORTANT RULES:
+- Work STEP BY STEP
+- Do NOT rush
+- Do NOT skip files
+- Do NOT assume anything
+- Fix errors immediately if they appear
+- Make sure the app RUNS on Replit with ZERO errors
+
+====================
+PROJECT GOAL
+====================
+Build a COMPLETE, LARGE, FULLY WORKING digital shop website.
+This project must be stable, beginner-friendly, and error-free.
+
+====================
+TECH STACK (SAFE FOR REPLIT)
+====================
+- Node.js (CommonJS only, NO ES modules)
+- Express.js
+- SQLite (sqlite3 package)
+- EJS templates
+- HTML + CSS + Vanilla JS
+- bcryptjs (NOT bcrypt)
+- express-session
+- connect-sqlite3
+- multer (for file uploads)
+
+⚠️ DO NOT use:
+- TypeScript
+- React
+- Prisma
+- MongoDB
+- ES module imports
+
+====================
+HOW YOU MUST BUILD
+====================
+
+PHASE 1️⃣ – PROJECT SETUP
+- Create package.json
+- Install dependencies
+- Create index.js
+- Create basic Express server
+- Test server runs without error
+
+STOP and VERIFY server runs.
+
+PHASE 2️⃣ – DATABASE
+- Create SQLite database
+- Auto-create tables on first run
+- Add console logs for DB success/failure
+- Handle DB errors safely
+
+STOP and VERIFY DB works.
+
+PHASE 3️⃣ – AUTH SYSTEM
+- Register (email, password, confirm password)
+- Login (email, password)
+- Hash passwords
+- First registered user = ADMIN
+- Others = USER
+- Session login persistence
+
+STOP and VERIFY login/register works.
+
+PHASE 4️⃣ – ROLE PROTECTION
+- Middleware:
+  - requireLogin
+  - requireAdmin
+- Protect admin routes
+- Prevent users from accessing admin panel
+
+STOP and VERIFY permissions.
+
+====================
+FEATURES (MUST WORK)
+====================
+
+🪙 CREDIT SYSTEM
+- Each user has credits
+- Credits stored in DB
+- Credit logs table
+- Credits increase/decrease safely
+
+💳 PAYMENT VERIFICATION
+- User submits transaction ID
+- Status = PENDING
+- Admin can APPROVE or REJECT
+- On approve → add credits
+- Prevent double approval
+
+🎟️ REDEEM CODE SYSTEM
+- Admin can generate codes
+- One-time use
+- Optional expiry
+- Adds credits
+- Logs user who redeemed
+
+🛒 ITEM SYSTEM
+ONLY ADMIN can add items.
+
+Item Types:
+
+1) FULL CONTENT
+- Text or uploaded file
+- Unlock instantly after purchase
+
+2) SEQUENTIAL CONTENT
+- Admin adds Page 1, Page 2, Page 3...
+- First buyer gets Page 1
+- Second buyer gets Page 2
+- Auto-increment logic
+- No duplicate delivery
+
+💰 PURCHASE SYSTEM
+- Check credits before buying
+- Deduct credits safely
+- Save purchase history
+- Prevent double purchase
+
+🎫 TICKET SYSTEM
+- User creates ticket
+- Admin replies
+- Admin closes ticket
+- Ticket status OPEN/CLOSED
+
+====================
+PAGES (MUST LOAD)
+====================
+/register
+/login
+/dashboard
+/items
+/item/:id
+/transactions
+/tickets
+/admin
+
+====================
+ADMIN PANEL
+====================
+Admin can:
+- View users
+- Edit credits
+- Manage items
+- Approve payments
+- Generate redeem codes
+- View tickets
+- See stats
+
+====================
+UI / DESIGN
+====================
+Theme:
+- Neon
+- Cyberpunk
+- Dark mode
+
+Design:
+- Animated buttons
+- Glow effects
+- Smooth hover
+- Mobile friendly
+
+Background video:
+https://motionbgs.com/media/8870/echoes-of-a-forgotten-soul.960x540.mp4
+
+====================
+ERROR HANDLING (CRITICAL)
+====================
+- Catch all errors
+- Show user-friendly messages
+- Console.log real error
+- App must NOT crash
+
+====================
+FINAL OUTPUT RULES
+====================
+- Show FULL file tree
+- Show FULL code for EVERY file
+- NO pseudo code
+- NO skipped logic
+- Everything must RUN
+
+If something breaks:
+- STOP
+- FIX
+- CONTINUE
+
+Start now from PHASE 1.

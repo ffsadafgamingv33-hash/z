@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cyberpunk Palette - Neon & Dark */
+  --background: 240 10% 3%;
+  --foreground: 180 100% 50%; /* Cyan text */
+
+  --card: 240 10% 5%;
+  --card-foreground: 180 20% 90%;
+
+  --popover: 240 10% 5%;
+  --popover-foreground: 180 20% 90%;
+
+  --primary: 180 100% 50%; /* Cyan Neon */
+  --primary-foreground: 240 10% 3%;
+
+  --secondary: 300 100% 50%; /* Magenta Neon */
+  --secondary-foreground: 240 10% 3%;
+
+  --muted: 240 10% 12%;
+  --muted-foreground: 180 30% 60%;
+
+  --accent: 120 100% 50%; /* Lime Neon */
+  --accent-foreground: 240 10% 3%;
+
+  --destructive: 0 100% 50%; /* Red Neon */
+  --destructive-foreground: 240 10% 3%;
+
+  --border: 180 100% 50%; /* Cyan borders everywhere */
+  --input: 240 10% 12%;
+  --ring: 180 100% 50%;
+
+  --radius: 0px; /* Sharp edges for cyberpunk feel */
+
+  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-black;
+    background-image: 
+      linear-gradient(to right, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-wider uppercase text-primary drop-shadow-[0_0_10px_rgba(0,255,255,0.5)];
+  }
+
+  /* Scanline effect */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%,
+      rgba(0, 0, 0, 0.1)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.15;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  .box-glow {
+    box-shadow: 0 0 15px theme('colors.primary.DEFAULT'), inset 0 0 15px theme('colors.primary.DEFAULT');
+  }
+  .box-glow-secondary {
+    box-shadow: 0 0 15px theme('colors.secondary.DEFAULT'), inset 0 0 15px theme('colors.secondary.DEFAULT');
+  }
+  .clip-path-diagonal {
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+}
